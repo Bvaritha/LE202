@@ -28,7 +28,7 @@ Link: https://www.microchip.com/en-us/product/PIC18F04Q41
 หน่วยความจำ 16 KB
 พอร์ท INPUT/OUTPUT 3 16-bit ,PWMs ประกอบด้วย 6 PWM outputs
 ## Sipeed Maix-Bit Risc-V
-5.Sipeed Maix-Bit Risc-V
+5. ชื่อ Sipeed Maix-Bit Risc-V
 ราคา 1985 บาท
 Link: https://www.arduitronics.com/product/2850/sipeed-maixduino-for-risc-v-ai-iot
 ความเร็ว 400 MHz
