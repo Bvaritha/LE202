@@ -9,6 +9,8 @@
 ``
 python-3.9.1-amd64.exe
 pip install -U platformio
+platformio
+pio
 ``
 4. เปิด command prompt หรือ cmd เข้าไปโฟลเดอร์ iotset1
 ``
@@ -20,7 +22,9 @@ dir
 Cd ioset1/examples/ex01
 pio run
 ``
-6. รันตัวอย่างที่ 2
+- ถ้าเจอข้อความสีเหลือง ให้คัดลอก piosystem prune จากนัั้น พิพม์ y ทั้งหมด 3 ครั้ง
+6. รันตัวอย่างที่ 2 
+โดย ให้พิมพ์ cd .. ก่อนเพื่อล้างคำสั่งขอวตัวอย่างที่ 1
 ``
 cd iotset1/examples/ex03
 pio run
