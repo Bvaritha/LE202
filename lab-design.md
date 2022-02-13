@@ -4,8 +4,8 @@
 2. ศึกษาระบบคำสั่งของไมโครคอนโทรเลอร์ที่ใช้ตรวจจับควัน
 3. ศึกษาการเชื่อมต่อไมโครคอนโทรเลอร์กับอุปกรณ์ต่างๆ
 ## อุปกรณ์
-1. บอร์ด Arduino 
-2. Sensor 
+1. บอร์ด Arduino UNO R3 
+2. Sensor MQ2
 3. LED 3 ตัว (สีเขียว,สีเหลือง,สีแดง)
 4. ตัวต้านทาน 3 ตัว
 5. สาย USB
@@ -14,4 +14,29 @@
 > - https://www.vivint.com/resources/article/how-do-smoke-detectors-work
 > - https://www.cybertice.com/article/196/%E0%B8%AA%E0%B8%AD%E0%B8%99%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-arduino-%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B8%A7%E0%B8%B1%E0%B8%99-mq2-lpg-co-smoke-gas-sensor
 ## วิธีทำ 
-1. 
+1. Arduino uno r3 ต่อเข้ากับ หลอดไฟ LED โดยขา13ของ 
+- Arduino เชื่อมกับ LED1
+2. Arduino uno r3 ต่อเข้ากับเซ็นเซอร์ตรวจจับควัน MQ2
+- A5 -> A0, 5V -> Vcc, GND -> GND
+``
+int ledPin = 13;
+int analogPin = 5; //ประกาศตัวแปร ให้ analogPin แทนขา analog ขาที่5
+int val = 0;
+void setup() {
+  pinMode(ledPin, OUTPUT);  // sets the pin as output
+  Serial.begin(9600);
+}
+
+void loop() {
+  val = analogRead(analogPin);  //อ่านค่าสัญญาณ analog ขา5
+  Serial.print("val = "); // พิมพ์ข้อมความส่งเข้าคอมพิวเตอร์ "val = "
+  Serial.println(val); // พิมพ์ค่าของตัวแปร val
+  if (val > 500) { // สามารถกำหนดปรับค่าได้ตามสถานที่ต่างๆ
+    digitalWrite(ledPin, HIGH); // สั่งให้ LED ติดสว่าง
+  }
+  else {
+    digitalWrite(ledPin, LOW); // สั่งให้ LED ดับ
+  }
+  delay(100);
+}
+``
