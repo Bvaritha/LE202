@@ -18,8 +18,7 @@
 - Arduino เชื่อมกับ LED1
 2. Arduino uno r3 ต่อเข้ากับเซ็นเซอร์ตรวจจับควัน MQ2
 - A5 -> A0, 5V -> Vcc, GND -> GND
-``
-int ledPin = 13;
+```int ledPin = 13;
 int analogPin = 5; //ประกาศตัวแปร ให้ analogPin แทนขา analog ขาที่5
 int val = 0;
 void setup() {
@@ -39,4 +38,4 @@ void loop() {
   }
   delay(100);
 }
-``
+```
